@@ -1,0 +1,35 @@
+name: Builds
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      
+      - name: Install CMake
+      - uses: lukka/get-cmake@latest
+
+      - name: Setup python
+        uses: actions/setup-python@v2
+
+      - name: Compiling
+        run: |
+          python .github/workflows/build.py
+      - uses: actions/upload-artifact@v3
+        with:
+          name: builds
+          path: '${{ github.workspace }}/*.zip'
