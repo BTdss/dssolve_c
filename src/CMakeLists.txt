@@ -17,18 +17,18 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-    test_dssolve_c
-    test_dssolve_c.cpp
+    test_dssolve
+    test_dssolve.cpp
 )
 
 target_link_libraries(
-    test_dssolve_c
+    test_dssolve
     dssolve
 )
 target_link_libraries(
-    test_dssolve_c
+    test_dssolve
     gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(test_dssolve_c)
+gtest_discover_tests(test_dssolve)
