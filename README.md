@@ -68,11 +68,10 @@ exec dssolve_c/lib/test_dssolve
 The tests use [GoogleTest](https://github.com/google/googletest) a C++ test framework. 
 
 ## License
-`dssolve_c` is licensed under either of
+`dssolve_c` is licensed under both of:
 
 - Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
 - MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
-at your option.
 
 _**`dssolve_c` also depends on Eigen v3.4.0 which is licensed under [MPL v2.0](https://www.mozilla.org/en-US/MPL/2.0/). The source code of Eigen can be found on [Eigen's Home Page](https://eigen.tuxfamily.org/).**_
