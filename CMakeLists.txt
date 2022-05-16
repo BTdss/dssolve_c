@@ -26,7 +26,7 @@ set_target_properties(dssolve PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${DSSOLVE_OUT_
 
 if (MSVC)
     set_target_properties(dssolve PROPERTIES OUTPUT_NAME libdssolve)
-    set_target_properties(dssolve PROPERTIES LIBRARY_OUTPUT_DIRECTORY_RELEASE ${DSSOLVE_OUT_DIR})
+    set_target_properties(dssolve PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${DSSOLVE_OUT_DIR})
 endif ()
 
 SET(README_PATH "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
