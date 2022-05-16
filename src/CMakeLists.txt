@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
-add_library(dssolve dssolve.cpp)
+add_library(dssolve STATIC dssolve.cpp)
 
 
 include(FetchContent)
