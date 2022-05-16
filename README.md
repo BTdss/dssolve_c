@@ -34,6 +34,8 @@ int main ()
 
 ## How to Build
 
+_You can also see [`build.py`](.github\workflows\build.py) as an example of build process._
+
 ### 0. Clone the repository
 ```shell
 git clone --recursive https://github.com/BTdss/dssolve_c.git
@@ -51,10 +53,17 @@ cmake -DCMAKE_BUILD_TYPE=Debug -S . -B build
 ```
 
 ### 2. Build the library
+
+A folder named `dssolve_c` will be created in this process, there you can find the library.
+
+#### For Linux and macOS
 ```shell
 cmake --build build
 ```
-A folder named `dssolve_c` will be created, there you can find the library.
+#### For Windows
+```shell
+cmake --build build --config Release
+```
 
 ## Tests
 
