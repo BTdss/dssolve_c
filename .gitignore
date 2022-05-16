@@ -1,3 +1,4 @@
 *build
 .vscode
 dssolve_c/
+*.zip
