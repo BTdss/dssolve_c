@@ -12,21 +12,29 @@ This library aims to provide a permissive-licensed and _Rust-friendly_ solver fo
 
 int main ()
 {
-    cmplx values[] = {{1, 1}, {1, 1}};
-    unsigned int rows[] = {0, 1};
-    unsigned int cols[] = {0, 1};
-    unsigned int n_value = 2;
-    cmplx b[] = {{1, 0}, {0, 1}};
-    unsigned int size = 2;
+  // Create the A matrix:
+  // | (1 + j1)     0     |
+  // |    0      (1 + j1) |
+  cmplx values[] = {{1, 1}, {1, 1}};
+  unsigned int rows[] = {0, 1};
+  unsigned int cols[] = {0, 1};
+  unsigned int n_value = 2; // number of non-zero values
 
-    cmplx expected[] = {{0.5, -0.5}, {0.5, 0.5}};
+  // Create the b vector:
+  // | (1 + j0) |
+  // | (1 + j0) |
+  cmplx b[] = {{1, 0}, {0, 1}};
+  unsigned int size = 2; // Size of the system
+  
+  // Solve the system Ax = b and salve the result in b.
+  solve(values, rows, cols, n_value, b, size);
 
-    solve(values, rows, cols, n_value, b, size);
-    for (unsigned int i = 0; i < size; i++)
-    {
-        std::cerr << "x[" << i << "] = "
-                << b[i].real << " + j(" << b[i].imag << ")" << std::endl;
-    }
+  // Print the solution.
+  for (unsigned int i = 0; i < size; i++)
+  {
+    std::cout << "x[" << i << "] = "
+              << b[i].real << " + j(" << b[i].imag << ")" << std::endl;
+  }
 
     return 0;
 }
@@ -34,7 +42,7 @@ int main ()
 
 ## How to Build
 
-_You can also see [`build.py`](.github\workflows\build.py) as an example of build process._
+_You can also see [`build.py`](.github\workflows\build.py) as an example of the build process._
 
 ### 0. Clone the repository
 ```shell
