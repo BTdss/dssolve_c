@@ -24,7 +24,7 @@ jobs:
         if: ${{ !(matrix.os == 'macos-latest') }} # macos fail on clang-actions (why?)
         uses: KyleMayes/install-llvm-action@v1
         with:
-          version: "10.0"
+          version: "14.0"
       
       - name: Install CMake
         uses: lukka/get-cmake@latest
