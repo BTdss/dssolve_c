@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.14)
 
+set(CMAKE_C_COMPILER_NAMES clang gcc icc cc)
+set(CMAKE_CXX_COMPILER_NAMES clang++ g++ icpc c++ cxx)
+
 set(CMAKE_DEBUG_POSTFIX d)
 set(BUILD_SHARED_LIBS OFF)
 set(CMAKE_CXX_STANDARD 14)

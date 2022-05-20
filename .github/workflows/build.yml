@@ -19,6 +19,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: recursive
+
+      - name: Install LLVM and Clang
+        if: ${{ !(matrix.os == 'macos-latest') }} # macos fail on clang-actions (why?)
+        uses: KyleMayes/install-llvm-action@v1
+        with:
+          version: "14.0"
       
       - name: Install CMake
         uses: lukka/get-cmake@latest
