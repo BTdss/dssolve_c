@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 
 add_library(dssolve STATIC dssolve.cpp)
 
-IF(CMAKE_BUILD_TYPE MATCHES DEBUG)
+IF(CMAKE_BUILD_TYPE MATCHES Debug)
 
     include(FetchContent)
     FetchContent_Declare(
@@ -33,4 +33,5 @@ IF(CMAKE_BUILD_TYPE MATCHES DEBUG)
 
     include(GoogleTest)
     gtest_discover_tests(test_dssolve)
-ENDIF(CMAKE_BUILD_TYPE MATCHES DEBUG)
+    
+ENDIF(CMAKE_BUILD_TYPE MATCHES Debug)
