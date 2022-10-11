@@ -75,11 +75,12 @@ cmake --build build --config Release
 
 ## Tests
 
-Tests are created during the build process and can be found on the folder `dssolve_c` created.
+Tests are created during the build process (in debug) and can be found on the folder `dssolve_c` created.
 
 Execute the binary test to run the tests:
+#### For Linux and macOS
 ```shell
-exec dssolve_c/lib/test_dssolve 
+./dssolve_c/test_dssolve
 ```
 
 The tests use [GoogleTest](https://github.com/google/googletest) a C++ test framework. 

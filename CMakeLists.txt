@@ -6,6 +6,7 @@ set(CMAKE_CXX_COMPILER_NAMES clang++ g++ icpc c++ cxx)
 set(CMAKE_DEBUG_POSTFIX d)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+add_compile_definitions(EIGEN_MPL2_ONLY)
 
 if (MSVC)
     set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded")
